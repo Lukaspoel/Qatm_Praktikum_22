@@ -13,11 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
-using Microsoft.Win32; //FileDialog
-//-- < using > --          
-
-namespace Arbeitslatt_Namen_Auslesen
+namespace übung_dateien_auslesen
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -29,32 +25,19 @@ namespace Arbeitslatt_Namen_Auslesen
             InitializeComponent();
         }
 
-        int presscount = 0;
-
-        private void button4start_Click(object sender, RoutedEventArgs e)
+        private void button(object sender, RoutedEventArgs e)
         {
             string filePath = string.Empty;
-            presscount++;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                filePath = openFileDialog.FileName;
+
+            Button openFileDialog = new Button();
+            if (openFileDialog.() == true)
+                filePath = openFileDialog.Name;
+
             else
             {
                 MessageBox.Show("Bitte Exceldatei auswählen");
             }
-            Dateipfad.Text = $"{filePath} {presscount}";
-            string fileExtension = System.IO.Path.GetExtension(filePath);
 
-            if (fileExtension == ".xlsx")
-            {
-                MessageBox.Show("Ihre Datei wird bearbeitet");
-            }
-            else
-            {
-    
-                MessageBox.Show("Es sind nur Excel Dateien erlaubt");
-            }
-    
         }
     }
 }
