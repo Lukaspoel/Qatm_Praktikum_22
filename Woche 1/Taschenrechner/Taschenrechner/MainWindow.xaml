@@ -5,36 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Taschenrechner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="350">
+        Title="MainWindow" Height="450" Width="330">
     <Grid Background="#FFABABAB">
         <Grid.RowDefinitions>
+            <RowDefinition Height="38*"/>
             <RowDefinition Height="76*"/>
-            <RowDefinition Height="141*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="38*"/>
+
+
         </Grid.RowDefinitions>
 
-        <TextBlock  x:Name="Anzeigetafel" Height="110" TextWrapping="Wrap" VerticalAlignment="Center" Width="308" RenderTransformOrigin="0.5,0.5" Foreground="Black" FontFamily="Arial Black" Text="" FontSize="22" Background="Gainsboro">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="82*" />
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="82*" />
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="82*" />
+            <ColumnDefinition Width="41*" />
+            <ColumnDefinition Width="82*" />
+            <ColumnDefinition Width="41*" />
+
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock  x:Name="Anzeigetafel"  TextWrapping="Wrap" VerticalAlignment="Stretch" RenderTransformOrigin="0.509,0.463" Foreground="Black" FontFamily="Arial Black"   Background="Gainsboro" Margin="24,21,0,0" Grid.RowSpan="4" HorizontalAlignment="Stretch" Grid.ColumnSpan="8" FontSize="18">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="-0.064"/>
-                    <TranslateTransform/>
+                    <TranslateTransform X="-0.005" Y="-0.003"/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Button x:Name="Button_1" Content="1" HorizontalAlignment="Left" Height="32" Margin="40,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_1_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_2" Content="2" HorizontalAlignment="Center" Height="32" Margin="0,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_2_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_4" Content="4" HorizontalAlignment="Left" Height="32" Margin="40,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_4_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_5" Content="5" HorizontalAlignment="Center" Height="32" Margin="0,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_5_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_7" Content="7" HorizontalAlignment="Left" Height="32" Margin="40,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_7_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_8" Content="8" HorizontalAlignment="Center" Height="32" Margin="0,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_8_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_3" Content="3" HorizontalAlignment="Left" Height="32" Margin="250,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_3_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_6" Content="6" HorizontalAlignment="Left" Height="32" Margin="250,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_6_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_9" Content="9" HorizontalAlignment="Left" Height="32" Margin="250,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_9_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_Plus" Content="+" HorizontalAlignment="Left" Height="32" Margin="109,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_Plus_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_Minus" Content="-" HorizontalAlignment="Left" Height="32" Margin="187,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Click="Button_Minus_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_Enter"  Content="=" HorizontalAlignment="Left" Height="32" Margin="266,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Click="Button_Enter_Click" FontFamily="Arial Black"/>
-        <Button x:Name="Button_0" Content="0" HorizontalAlignment="Left" Height="32" Margin="30,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Button_0_Click" FontFamily="Arial Black"/>
+        <Button x:Name="Button_1" Content="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_1_Click" FontFamily="Arial Black" Grid.Column="1" Grid.Row="5"/>
+        <Button x:Name="Button_5" Content="5" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_5_Click" FontFamily="Arial Black" Grid.Column="3" Grid.Row="7"/>
+        <Button x:Name="Button_7" Content="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_7_Click" FontFamily="Arial Black" Grid.Column="1" Grid.Row="9"/>
+        <Button x:Name="Button_8" Content="8" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Click="Button_8_Click" FontFamily="Arial Black" Grid.Column="3" Grid.Row="9"/>
+        <Button x:Name="Button_6" Content="6" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Click="Button_6_Click" FontFamily="Arial Black" Grid.Column="5" Grid.Row="7"/>
+        <Button x:Name="Button_Minus" Content="-" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Click="Button_Minus_Click" FontFamily="Arial Black" Grid.Column="3" Grid.Row="11"/>
+        <Button x:Name="Button_Enter"  Content="="  Margin="23,22,25,0"  Click="Button_Enter_Click" FontFamily="Arial Black" Grid.Column="6" RenderTransformOrigin="0.5,0.5" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.041"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="Button_0" Content="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="Button_0_Click" FontFamily="Arial Black" Grid.Row="11" Grid.Column="1"/>
+        <Button x:Name="Button_2" Content="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_2_Click" FontFamily="Arial Black" Grid.Column="3" Grid.Row="5"/>
+        <Button x:Name="Button_4" Content="4" HorizontalAlignment="Stretch" Click="Button_4_Click" FontFamily="Arial Black" Grid.Column="1" RenderTransformOrigin="0.345,0.67"  VerticalAlignment="Stretch" Grid.Row="7"/>
+        <Button x:Name="Button_3" Content="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Click="Button_3_Click" FontFamily="Arial Black" Grid.Column="5" Grid.Row="5"/>
+        <Button x:Name="Button_9" Content="9" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Click="Button_9_Click" FontFamily="Arial Black" Grid.Column="5" Grid.Row="9"/>
+        <Button x:Name="Button_Plus" Content="+" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="Button_Plus_Click" FontFamily="Arial Black" Grid.Column="5" Grid.Row="11"/>
+        <Button x:Name="ENTF"  Grid.Column="7" Content="C"  Grid.Row="9" Click="ENTF_Click" FontFamily="Arial Black" Grid.ColumnSpan="2" Margin="0,0,25,23" Grid.RowSpan="2"/>
+
+
+
+
+
 
     </Grid>
 </Window>
