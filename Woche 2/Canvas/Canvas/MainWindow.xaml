@@ -1,0 +1,132 @@
+﻿<Window x:Class="CanvasWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CanvasWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        KeyDown="keyIsDown" KeyUp="keyIsUp">
+    
+    <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <Canvas x:Name="canvas" Width="800" Height="450" Background="White" MouseLeftButtonDown="canvas_MouseLeftButtonDown" Margin="-1,-1,-81,-17">
+                </Canvas>
+            </Border>
+            
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" Text="        X:" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="txtXCoord" Text="200" TextWrapping="Wrap" MinWidth="50" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" Text="        Y:" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="txtYCoord" Text="300" TextWrapping="Wrap" MinWidth="50" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" Text=" Higth:"  HorizontalAlignment="Center"/>
+                    <TextBox Text=" 40" x:Name="txtHigth"  MinWidth="50" TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" Text="Width:" HorizontalAlignment="Center"/>
+                    <TextBox Text="40" x:Name="txtWidth"  MinWidth="50" TextWrapping="Wrap" />
+
+
+                </StackPanel>
+
+                <ComboBox x:Name="cbColor">
+                    <ComboBoxItem>
+                        Rot
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Blau
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Weiß
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Schwarz
+                    </ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">
+                        Lila
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Grün
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Orange
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Gelb
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Magenta
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Zufällig
+                    </ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox x:Name="clickModus">
+                    <ComboBoxItem IsSelected="True">
+                        Nix
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Farbe ändern
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Hinzufügen
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Löschen
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Geschwindigkeit+
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Geschwindigkeit-
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Geschw.Glockenkurve
+                    </ComboBoxItem>
+                 
+                </ComboBox>
+
+
+                <TextBlock TextWrapping="Wrap" Text="" HorizontalAlignment="Center"/>
+
+                <Button x:Name="button"  Content="Rechteck zeichnen" Click="rechteck_Zeichnen_click"/>
+                <Button x:Name="clear"  Content="Zeichenbereich  leeren" Click="button_Click_1"/>
+                <Button x:Name="animate"  Content="Animieren" Click="animate_Click"/>
+                <Button x:Name="geschwZurücksetzt" Content="Geschwindigkeit zurücksetzten" Click="geschwZurücksetzt_Click"/>
+                <Button Content="Glockenkurve" Click="Button_Click_2" />
+                <Button Content="RGB" Click="RGB_Click" />
+                <Button Content="Player Spawn" Click="PlayerSpawn_Click" />
+            </StackPanel>
+
+
+        </Grid>
+
+    </Grid>
+
+
+</Window>

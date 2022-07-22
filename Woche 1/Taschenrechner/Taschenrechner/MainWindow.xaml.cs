@@ -77,12 +77,39 @@ namespace Taschenrechner
         }
 
         private void Button_Minus_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             Anzeigetafel.Text = Anzeigetafel.Text + "-";
         }
 
+
+
+        private void Button_0_Click(object sender, RoutedEventArgs e)
+        {
+            Anzeigetafel.Text = Anzeigetafel.Text + "0";
+
+        }
+
+        private void ENTF_Click(object sender, RoutedEventArgs e)
+        {
+            Anzeigetafel.Text = Anzeigetafel.Text = "";
+
+        }
+
+        private void Button_mal_Click(object sender, RoutedEventArgs e)
+
+        {
+            Anzeigetafel.Text = Anzeigetafel.Text + "*";
+
+        }
+
+        private void Button_divi_Click(object sender, RoutedEventArgs e)
+        {
+            Anzeigetafel.Text = Anzeigetafel.Text + "/";
+        }
         private void Button_Enter_Click(object sender, RoutedEventArgs e)
         {
+
+
             while (true)
             {
                 //Erste Nummer
@@ -101,21 +128,31 @@ namespace Taschenrechner
 
                 for (int pos = posSecondNumberEnd; pos <= Anzeigetafel.Text.Length - 1; pos++)
                 {
-                    if (posFirstNumber < 0)
+
+                   
+
+                        if (posFirstNumber < 0)
                     {
                         posFirstNumber = pos;
                     }
 
+                  
+                    
                     if (!Char.IsDigit(Anzeigetafel.Text[pos]))
                     {
                         if (!firstNumberFound)
                         {
+                            
                             posFirstNumberEnd = pos - 1;
                             firstNumber = Convert.ToInt32(Anzeigetafel.Text.Substring(posFirstNumber, posFirstNumberEnd - posFirstNumber + 1));
-                            firstNumberFound = true;               
-
+                            firstNumberFound = true;
+                             
                             op = Anzeigetafel.Text[pos];
                             posSecondNumber = pos + 1;
+
+
+
+                            
                         }
                         else if (!secondNumberFound)
                         {
@@ -128,12 +165,14 @@ namespace Taschenrechner
                     }
                 }
 
-                if(posSecondNumber > posSecondNumberEnd)
+                if (posSecondNumber > posSecondNumberEnd)
                 {
                     posSecondNumberEnd = Anzeigetafel.Text.Length - 1;
                     secondNumber = Convert.ToInt32(Anzeigetafel.Text.Substring(posSecondNumber, Anzeigetafel.Text.Length - posSecondNumber));
                 }
 
+                
+                
                 int result = -1;
                 switch (op)
                 {
@@ -143,6 +182,19 @@ namespace Taschenrechner
                     case '+':
                         result = firstNumber + secondNumber;
                         break;
+
+                    case '*':
+                        result = firstNumber * secondNumber;
+                        break;
+
+                    case '/':
+                        result = firstNumber / secondNumber;
+                       
+                        break;
+
+                        
+
+
 
                 }
 
@@ -154,17 +206,15 @@ namespace Taschenrechner
                 {
                     break;
                 }
-               
+
             }
-
-
             /*
             string[] result = Anzeigetafel.Text.Split();
             int numberOne = Convert .ToInt32(result[0]);
             int numberTwo = Convert.ToInt32(result[2]);
             string arithnethic = result[1];
 
-            if (arithnethic == "+")
+            if (arithnethic == "+")    
             {
                 int additionResult = numberOne + numberTwo;
                 Anzeigetafel.Text = additionResult.ToString();
@@ -178,20 +228,8 @@ namespace Taschenrechner
             }*/
         }
 
-       
-            
-            private void Button_0_Click(object sender, RoutedEventArgs e)
-        {
-            Anzeigetafel.Text = Anzeigetafel.Text + "0";
 
 
 
-        }
-
-        private void ENTF_Click(object sender, RoutedEventArgs e)
-        {
-            Anzeigetafel.Text = Anzeigetafel.Text = "";
-
-        }
     }
 }
